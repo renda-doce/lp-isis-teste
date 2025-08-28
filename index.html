@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de Confeitaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    
+    :root {
+      --cor-principal: #FA8072; /* salmon */
+      --cor-secundaria: #fff5f2;
+      --cor-destaque: #d45d5d;
+      --cor-texto: #333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--cor-secundaria);
+      color: var(--cor-texto);
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #ffd9d1, #fff5f2);
+    }
+    header h1 {
+      /* font-family: 'Playfair Display', serif; */
+      font-size: 2.5rem;
+      color: var(--cor-principal);
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .carousel {
+      position: relative;
+      max-width: 500px; /* tamanho do carrossel */
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .carousel-images {
+      display: flex;
+      transition: transform 2.0s ease-in-out;
+    }
+
+    .carousel-images img {
+      width: 100%; /* cada imagem ocupa 100% do carrossel */
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    section {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    section h2 {
+      /* font-family: 'Playfair Display', serif; */
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--cor-principal);
+    }
+    section p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      background: var(--cor-principal);
+      color: #fff;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .cta-btn:hover {
+      background: var(--cor-destaque);
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #ffe6e1;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      section h2 { font-size: 1.6rem; }
+      .cta-btn { font-size: 1rem; padding: 0.8rem 1.5rem; }
+    }
+
+  </style>>
+</head>
+<body>
+  <header>
+    <img class="logo" src="./logo.png" width="200px" height="200px" alt="Logotipo escrito Renda Doce"/>
+    <h1>O Doce Sabor da Confeitaria</h1>
+    <p>Aprenda técnicas incríveis e encante corações com suas criações doces</p>
+  </header>
+
+  <div class="carousel">
+    <div class="carousel-images">
+      <img class="carousel-img active" src="./1.webp" alt="Bolo confeitado">
+      <img class="carousel-img" src="./2.webp" alt="Cupcakes coloridos">
+      <img class="carousel-img" src="./3.webp" alt="Doces de chocolate">
+      <img class="carousel-img" src="./4.png"  alt="Sobremesa sofisticada">
+      <img class="carousel-img" src="./1.webp" alt="Macarons">
+      <img class="carousel-img" src="./2.webp" alt="Cookies decorados">
+      <img class="carousel-img" src="./3.webp" alt="Doces coloridos">
+    </div>
+  </div>
+
+  <section>
+    <h2>Transforme sua paixão em profissão</h2>
+    <p>Nosso curso de confeitaria foi feito para quem deseja unir arte, sabor e emoção em cada doce. Com técnicas modernas, receitas exclusivas e dicas de especialistas, você estará pronto(a) para encantar clientes e familiares com suas criações irresistíveis.</p>
+    <a href="#" class="cta-btn">Quero me inscrever!</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Curso de Confeitaria | Feito com ❤️ e açúcar
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+const carousel = document.querySelector(".carousel-images");
+const images = document.querySelectorAll(".carousel-images img");
+const total = images.length;
+
+function showNextImage() {
+  currentIndex = (currentIndex + 1) % total;
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+setInterval(showNextImage, 5000);
+  </script>
+</body>
+</html>
